@@ -11,7 +11,7 @@
 /* General Styles */
 body {
     min-height: 100vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     /*generic project styles */
     color: #3a3a3a;
@@ -19,7 +19,9 @@ body {
 
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -33,10 +35,10 @@ h1, h2, h3 {
 }
 
 /* Header */
-header{
+header {
     background-color: #ffffff;
     padding: 0 1rem;
-    position:fixed;
+    position: fixed;
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
@@ -55,9 +57,11 @@ header a {
     letter-spacing: 4px;
     list-style-type: none;
 }
-#menu > li {
+
+#menu>li {
     margin-bottom: 1rem;
 }
+
 .active {
     border-bottom: 1px solid #3a3a3a;
 }
@@ -67,7 +71,7 @@ nav {
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    left: 0 ;
+    left: 0;
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
@@ -83,16 +87,23 @@ nav {
     display: none;
 }
 
-.nav-toggle-label{
+.nav-toggle-label {
     font-size: 2rem;
 }
 
 /* Main */
-main{
+main {
     /* make element take up any surplus space on page */
     flex: 1 0 auto;
+
+    /* margin at the top to prevent content from being covered by header */
     margin-top: 47px;
+
+    /* enable flex box for child elements */
+    display: flex;
+    flex-direction: column;
 }
+
 /* Hero Section */
 
 #hero {
@@ -102,11 +113,11 @@ main{
     position: relative;
 }
 
-#cover-text{
+#cover-text {
     /* Final rgba value set to semi transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
-    position:absolute;
+    position: absolute;
     bottom: 30px;
     width: 80%;
     min-height: 200px;
@@ -114,35 +125,38 @@ main{
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
 /* Why Love With Us */
-#reasons{
+#reasons {
     width: 90%;
     margin: 20px auto;
 }
 
-#reasons h2{
+#reasons h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 280%;
 }
 
-#benefits-physical, benefits-mental{
+#benefits-physical,
+benefits-mental {
     line-height: 20px;
     margin-bottom: 20px;
 }
 
-#benefits p{
+#benefits p {
     padding: 0 20px;
 }
 
-hr{
+hr {
     border-top: 1px solid #3a3a3a;
     margin: 5px 0;
 }
+
 /* Reasons image */
 
 #circle-cover-bg {
@@ -159,7 +173,7 @@ hr{
 #benefits-image {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 /* Times and location Section */
@@ -195,8 +209,55 @@ hr{
     width: 100%;
     line-height: 1em;
 }
+
 #photos {
     line-height: 0;
+}
+
+/* Form */
+#signup {
+    background-image: url("../images/signup-image.webp");
+    background-size: cover;
+    background-position: 75%;
+    padding: 20px 10% 0 10%;
+    flex-grow: 1;
+}
+
+#signup-form {
+    color: #ffffff;
+    background-color: rgba(60, 60, 60, 0.6);
+    padding: 30px;
+}
+
+#signup-form>h2 {
+    color: #fafafa;
+    margin-bottom: 20px;
+}
+
+.text-input {
+    background: transparent;
+    color: #fafafa;
+    width: 100%;
+    height: 25px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+.radio-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.join-run {
+    margin-top: 20px;
+    border-radius: 2px;
+    padding: 15px 32px;
+    font-size: 100%;
+    background-color: #454b1b;
+    color: #fafafa;
 }
 
 
@@ -225,8 +286,9 @@ hr{
 
 /* Media query: tablets and larger (768px & up) */
 @media screen and (min-width: 768px) {
+
     /* Header */
-    nav{
+    nav {
         display: block;
         position: relative;
         box-shadow: none;
@@ -238,13 +300,14 @@ hr{
         display: flex;
     }
 
-    #menu > li{
+    #menu>li {
         padding-left: 1rem;
     }
 
-    .nav-toggle-label{
+    .nav-toggle-label {
         display: none;
     }
+
     #logo {
         font-size: 280%;
         line-height: 75px;
@@ -259,7 +322,7 @@ hr{
     }
 
     /* Hero */
-    #cover-text{
+    #cover-text {
         width: 300px;
         right: 50px;
     }
@@ -272,12 +335,12 @@ hr{
         width: 100%;
     }
 
-    #benefits-physical > div,
-    #benefits-mental > div {
+    #benefits-physical>div,
+    #benefits-mental>div {
         width: 75%;
     }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
     }
@@ -286,10 +349,32 @@ hr{
     #photos {
         column-count: 3;
     }
+
+    /* Form */
+    #signup {
+        background-position: center;
+        position: relative;
+        height: 800px;
+    }
+
+    #signup-form {
+        max-width: 400px;
+        position: absolute;
+        left: 10%;
+        top: 150px;
+    }
+    .text-input:hover{
+        color: #f16c6b;
+    }
+    .join-button:hover {
+        background-color: #fafafa;
+        color: #454b1b;
+    }
 }
 
 /* Media query: laptops and larger (992px & up) */
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
+
     /* Header */
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
@@ -307,19 +392,24 @@ hr{
         display: flex;
         flex-direction: row;
     }
-    #benefits > div{
+
+    #benefits>div {
         flex: 1;
     }
-    #benefits-image{
+
+    #benefits-image {
         order: 0;
     }
-    #benefits-mental{
+
+    #benefits-mental {
         order: 1;
     }
-    #benefits-mental > div {
+
+    #benefits-mental>div {
         align-self: flex-start;
     }
-    #benefits-physical > div {
+
+    #benefits-physical>div {
         align-self: flex-end;
     }
-    }
+}
