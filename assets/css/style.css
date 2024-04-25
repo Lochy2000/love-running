@@ -26,6 +26,12 @@ h1, h2, h3 {
     color: #252525;
 }
 
+/* Hide elements. elements still needed for SEO */
+
+.hidden-heading {
+    display: none;
+}
+
 /* Header */
 header{
     background-color: #ffffff;
